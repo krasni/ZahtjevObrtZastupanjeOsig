@@ -1,0 +1,21 @@
+1. Šta je: upisan u registar Hanfe pod brojem %RH% , koji će biti poslovođa i zaposlen u navedenom obrtu.? - texstualno polje -- jesam
+2. staviti opise u web formu (legende) -- jesam
+6. šta tu ide, šta je posrednik? Fali mi tvrtka obrta posrednika. - automatski, netreba kontrola, ide naziv obrta na vrhu -- jesam
+Kategorija posrednika iz članka 402. Zakona o osiguranju u kojoj će obrt za zastupanje u osiguranju %Posrednik% (tvrtka obrta) 
+7. staviti kontakt broj ili mail na formu (to se ispisuje na kraju u word-u) - to ide valjda u osnivač obrta. -- jesam
+8. kako dobiti "funkciju" ( to je na kraju dio potpisa)? -- funkcija osnivača nova kontrola -- jesam
+9. Ispuniti Zagreb, mjesto, dan. -- prazno
+10. kad je označeno slanje na mail popuni automatski iz vlasnika obrta email? ili makni polje mail na kraju i pošalji na onaj
+prvi mail, osnivač obrta? -- samo šalji na označenu mail adresu, sam upisuje
+11.Kako popuniti Mjesto, dodati novu kontrolu? -- ne
+12. problem je što nemam crte, treba ih vratiti ako podaci nisu obavezni (sad ostaje varijabla %x% koja se ne  replejsa). -- jesam
+13. Što je pravna osoba osnivača: -- ništa, ide ime i prezime -- jesam
+Zakona o osiguranju s %PravnaOsobaOsnivaca% (ime i prezime/naziv pravne osobe
+osnivača), osnivačem/ima navedenog obrta za zastupanje u osiguranju što nije prepreka
+učinkovitom izvršavanju nadzornih ovlasti Hanfe., ) šta je tu naziv pravne osobe osnivača, nemam taj podatak !!!!!!
+Meni je za sada OsnivacObrt samo fizička osoba., ja stavio ime i prezime osnivača
+Moguće je unjeti ime prezime osnivača ili naziv pravne osobe osnivača - ja nemam taj podatković
+14. u pdf-u WO1.pdf piše za zastupnika ime i prezime / naziv pravne osobe, ja naziv pravne osobe nemam u template-u
+15. %Mjesto%, šta tu da stavim?, %Datum% automatski generiran, trebam staviti kalendat u formu da mogu to polje mjenjati?
+16. funkcija osnivača (?) - na kraju dokumenta -- stavi kontrolu
+18. Napraviti bolje http errore, sad su ružni.

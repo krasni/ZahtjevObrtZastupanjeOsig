@@ -1,0 +1,19 @@
+1. Šta je: upisan u registar Hanfe pod brojem %RH% , koji će biti poslovođa i zaposlen u navedenom obrtu.?
+2. staviti opise u web formu (legende)
+3. staviti logo
+4. staviti work in progress kad se pokrene Ajax
+5. staviti neki status kod gumba zeleni, tipa dokument je poslan na mail.¸
+6. šta tu ide, šta je posrednik? Fali mi tvrtaka obrta posrednika.
+Kategorija posrednika iz članka 402. Zakona o osiguranju u kojoj će obrt za zastupanje u osiguranju %Posrednik% (tvrtka obrta) 
+7. staviti kontakt broj ili mail na formu (to se ispisuje na kraju u word-u) - to ide valjda u osnivač obrta.
+8. kako dobiti "funkciju" ( to je na kraju dio potpisa)?
+9. Ispuniti Zagreb, mjesto, dan.
+10. kad je označeno slanje na mail popuni automatski iz vlasnika obrta email? ili makni polje mail na kraju i pošalji na onaj
+prvi mail, osnivač obrta?
+11.Kako popuniti Mjesto, dodati novu kontrolu?
+12. problem je što nemam crte, treba ih vratiti ako podaci nisu obavezni (sad ostaje varijabla %x% koja se ne  replejsa).
+13. Što je pravna osoba osnivača:
+Zakona o osiguranju s %PravnaOsobaOsnivaca% (ime i prezime/naziv pravne osobe
+osnivača), osnivačem/ima navedenog obrta za zastupanje u osiguranju što nije prepreka
+učinkovitom izvršavanju nadzornih ovlasti Hanfe., ) šta je tu naziv pravne osobe osnivača, nemam taj podatak !!!!!!
+14. u pdf-u WO1.pdf piše za zastupnika ime i prezime / naziv pravne osobe, ja naziv pravne osobe nemam u template-u.
