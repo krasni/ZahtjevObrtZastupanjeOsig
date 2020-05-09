@@ -173,86 +173,67 @@
                     *Kontrolu povezanosti popuniti samo u slučaju kada postoji povezanost iz članka 3. točke 26. Zakona o osiguranju: dvije ili više fizičkih ili pravnih osoba osobe koje su povezane kontrolom ili sudjelovanjem ili položaj u kojem su dvije ili više fizičkih ili pravnih osoba trajno povezane s jednom te istom osobom odnosom kontrole (izjavu daje osnivač/i navedenog obrta)
                 </div>
                 <div id="podaciKontrolaPovezanosti">
-                    <p class="lead">Podaci o uskoj povezanosti</p>
-                    <div class="form-group row">
-                        @Html.Label("fizickaOsoba", "Fizička osoba", new { @class = "form-check-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.RadioButtonFor(model => model.KontrolaPovezanosti.PravnaIliFizickaOsoba, "fizickaOsoba", new { id = "fizickaOsoba", @checked = true })
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        @Html.Label("pravnaOsoba", "Pravna osoba", new { @class = "form-check-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.RadioButtonFor(model => model.KontrolaPovezanosti.PravnaIliFizickaOsoba, "pravnaOsoba", new { id = "pravnaOsoba" })
-                        </div>
-                    </div>
-                </div>
-
-                <div id="podaciKontrolaPovezanostiFizickaOsoba">
-                    <div class="form-group row required">
-                        <label class="col-sm-2 control-label">Ime</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.KontrolaPovezanosti.FizickaOsoba.Ime, new { placeholder = "Ime fizičke osobe", @class = "form-control" })
-                        </div>
-                    </div>
-                    <div class="form-group row required">
-                        <label class="col-sm-2 control-label">Prezime</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.KontrolaPovezanosti.FizickaOsoba.Prezime, new { placeholder = "Prezime fizičke osobe", @class = "form-control" })
-                        </div>
-                    </div>
-                    <div class="form-group row required">
-                        <label class="col-sm-2 control-label">OIB</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.KontrolaPovezanosti.FizickaOsoba.OIB, new { placeholder = "OIB fizičke osobe", @class = "form-control" })
-                        </div>
-                    </div>
-                    <p class="lead">Adresa prebivališta povezane osobe</p>
-                    <div class="form-group row required">
-                        <label class="col-sm-2 control-label">Mjesto</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.KontrolaPovezanosti.FizickaOsoba.Mjesto, new { placeholder = "Mjesto fizičke osobe", @class = "form-control" })
-                        </div>
-                    </div>
-                    <div class="form-group row required">
-                        <label class="col-sm-2 control-label">Ulica i broj</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.KontrolaPovezanosti.FizickaOsoba.UlicaIKucniBroj, new { placeholder = "Ulica i broj fizičke osobe", @class = "form-control" })
-                        </div>
-                    </div>
-                </div>
-                <div id="podaciKontrolaPovezanostiPravnaOsoba">
-                    <div class="form-group row required">
-                        <label class="col-sm-2 control-label">Naziv</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.KontrolaPovezanosti.PravnaOsoba.Naziv, new { placeholder = "Naziv pravne osobe", @class = "form-control" })
-                        </div>
-                    </div>
-                    <div class="form-group row required">
-                        <label class="col-sm-2 control-label">OIB</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.KontrolaPovezanosti.PravnaOsoba.OIB, new { placeholder = "OIB pravne osobe", @class = "form-control" })
-                        </div>
-                    </div>
-                    <p class="lead">Adresa sjedišta</p>
-                    <div class="form-group row required">
-                        <label class="col-sm-2 control-label">Mjesto</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.KontrolaPovezanosti.PravnaOsoba.Mjesto, new { placeholder = "Mjesto pravne osobe", @class = "form-control" })
-                        </div>
-                    </div>
-                    <div class="form-group row required">
-                        <label class="col-sm-2 control-label">Ulica i kućni broj</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(model => model.KontrolaPovezanosti.PravnaOsoba.UlicaIKucniBroj, new { placeholder = "Ulica i kućni broj pravne osobe", @class = "form-control" })
-                        </div>
-                    </div>
-                    <div class="form-group row required">
-                        @Html.LabelFor(model => model.KontrolaPovezanosti.PravnaOsoba.DokazOUplacenojNaknadi, new { @class = "form-check-label col-sm-2" })
-                        <div class="col-sm-10">
-                            @Html.CheckBoxFor(model => model.KontrolaPovezanosti.PravnaOsoba.DokazOUplacenojNaknadi)
-                        </div>
-                    </div>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="width:20%">Ime</th>
+                                <th style="width:20%">Prezime</th>
+                                <th style="width:20%">OIB</th>
+                                <th style="width:20%">Ulica i kućni broj</th>
+                                <th style="width:20%"><button type="button" class="btn btn-default" data-bind="click: $root.AddFizickaOsoba">Dodaj fizičku osobu</button></th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: FizickeOsobe">
+                            <tr>
+                                <td>
+                                    <input type="text" class="form-control" data-bind="value: Ime, uniqueName: true" />
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" data-bind="value: Prezime, uniqueName: true" />
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" data-bind="value: OIB, uniqueName: true" />
+                                <td>
+                                    <input type="text" class="form-control" data-bind="value: UlicaIKucniBroj, uniqueName: true" />
+                                </td>
+                                <td>
+                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba" value="X" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="width:16%">Naziv</th>
+                                <th style="width:16%">OIB</th>
+                                <th style="width:16%">Mjesto</th>
+                                <th style="width:16%">Ulica i kućni broj</th>
+                                <th style="width:16%">DokazOUplacenojNaknadi</th>
+                                <th style="width:20%"><button type="button" class="btn btn-default" data-bind="click: $root.AddPravnaOsoba">Dodaj pravnu osobu</button></th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: PravneOsobe">
+                            <tr>
+                                <td>
+                                    <input type="text" class="form-control" data-bind="value: Naziv, uniqueName: true" />
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" data-bind="value: OIB, uniqueName: true" />
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" data-bind="value: Mjesto, uniqueName: true" />
+                                <td>
+                                    <input type="text" class="form-control" data-bind="value: UlicaIKucniBroj, uniqueName: true" />
+                                <td>
+                                    <input type="checkbox" class="form-control" data-bind="value: DokazOUplacenojNaknadi, uniqueName: true" />
+                                </td>
+                                <td>
+                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba" value="X" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <br />
                 <div>
@@ -307,5 +288,6 @@
     <script src="~/Scripts/jquery.cookie.js"></script>
     <script src="~/Scripts/AutomatskiPDF_Form.js"></script>
     <script src="~/Scripts/cookiealert.js"></script>
+    <script src="~/Scripts/knockout-3.5.1.js"></script>
 </body>
 </html> 

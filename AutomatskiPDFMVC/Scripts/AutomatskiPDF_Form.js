@@ -16,6 +16,8 @@ $().ready(function () {
     });
 
     $(function () {
+        ko.applyBindings(new KontrolaPovezanostiViewModel());
+
         $("#form1").validate({
             rules: {
                 "OsnivacObrt.Ime": "required",
@@ -46,22 +48,22 @@ $().ready(function () {
                 "OvlasteniZastupnik.BrojURegistruHanfe": "required",
                 "OvlasteniZastupnik.Mjesto": "required",
                 "OvlasteniZastupnik.UlicaIKucniBroj": "required",
-                "KontrolaPovezanosti.FizickaOsoba.Ime": "required",
-                "KontrolaPovezanosti.FizickaOsoba.Prezime": "required",
-                "KontrolaPovezanosti.FizickaOsoba.OIB": {
-                    required: true,
-                    rangelength: [11, 11]
-                },
-                "KontrolaPovezanosti.FizickaOsoba.Mjesto": "required",
-                "KontrolaPovezanosti.FizickaOsoba.UlicaIKucniBroj": "required",
-                "KontrolaPovezanosti.PravnaOsoba.Naziv": "required",
-                "KontrolaPovezanosti.PravnaOsoba.OIB": {
-                    required: true,
-                    rangelength: [11, 11]
-                },
-                "KontrolaPovezanosti.PravnaOsoba.Mjesto": "required",
-                "KontrolaPovezanosti.PravnaOsoba.UlicaIKucniBroj": "required",
-                "KontrolaPovezanosti.PravnaOsoba.DokazOUplacenojNaknadi": "required",
+                //"KontrolaPovezanosti.FizickaOsoba.Ime": "required",
+                //"KontrolaPovezanosti.FizickaOsoba.Prezime": "required",
+                //"KontrolaPovezanosti.FizickaOsoba.OIB": {
+                //    required: true,
+                //    rangelength: [11, 11]
+                //},
+                //"KontrolaPovezanosti.FizickaOsoba.Mjesto": "required",
+                //"KontrolaPovezanosti.FizickaOsoba.UlicaIKucniBroj": "required",
+                //"KontrolaPovezanosti.PravnaOsoba.Naziv": "required",
+                //"KontrolaPovezanosti.PravnaOsoba.OIB": {
+                //    required: true,
+                //    rangelength: [11, 11]
+                //},
+                //"KontrolaPovezanosti.PravnaOsoba.Mjesto": "required",
+                //"KontrolaPovezanosti.PravnaOsoba.UlicaIKucniBroj": "required",
+                //"KontrolaPovezanosti.PravnaOsoba.DokazOUplacenojNaknadi": "required",
                 "DokumentPodaci.MjestoIzrade": "required",
                 "DokumentPodaci.DatumIzrade": {
                     required: true,
@@ -101,22 +103,22 @@ $().ready(function () {
                 "OvlasteniZastupnik.BrojURegistruHanfe": "Unesite broj u registru Hanfe ovlaštenog zastupnika.",
                 "OvlasteniZastupnik.Mjesto": "Unesite mjesto ovlaštenog zastupnika.",
                 "OvlasteniZastupnik.UlicaIKucniBroj": "Unesite ulicu i kućni broj ovlaštenog zastupnika.",
-                "KontrolaPovezanosti.FizickaOsoba.Ime": "Unesite ime fizičke osobe.",
-                "KontrolaPovezanosti.FizickaOsoba.Prezime": "Unesite prezime fizičke osobe.",
-                "KontrolaPovezanosti.FizickaOsoba.OIB": {
-                    required: "Unesite OIB fizičke osobe.",
-                    rangelength: "Unesite ispravan OIB fizičke osobe."
-                },
-                "KontrolaPovezanosti.FizickaOsoba.Mjesto": "Unesite mjesto fizičke osobe.",
-                "KontrolaPovezanosti.FizickaOsoba.UlicaIKucniBroj": "Unesite ulicu i kucni broj fizičke osobe.",
-                "KontrolaPovezanosti.PravnaOsoba.Naziv": "Upišite naziv pravne osobe.",
-                "KontrolaPovezanosti.PravnaOsoba.OIB": {
-                    required: "Upišite OIB pravne osobe.",
-                    rangelength: "Unesite ispravan OIB pravne osobe."
-                },
-                "KontrolaPovezanosti.PravnaOsoba.Mjesto": "Upišite mjesto pravne osobe.",
-                "KontrolaPovezanosti.PravnaOsoba.UlicaIKucniBroj": "Upišite ulicu i kućni broj pravne osobe.",
-                "KontrolaPovezanosti.PravnaOsoba.DokazOUplacenojNaknadi": "Potvrdite dokaz o uplaćenoj naknadi.",
+                //"KontrolaPovezanosti.FizickaOsoba.Ime": "Unesite ime fizičke osobe.",
+                //"KontrolaPovezanosti.FizickaOsoba.Prezime": "Unesite prezime fizičke osobe.",
+                //"KontrolaPovezanosti.FizickaOsoba.OIB": {
+                //    required: "Unesite OIB fizičke osobe.",
+                //    rangelength: "Unesite ispravan OIB fizičke osobe."
+                //},
+                //"KontrolaPovezanosti.FizickaOsoba.Mjesto": "Unesite mjesto fizičke osobe.",
+                //"KontrolaPovezanosti.FizickaOsoba.UlicaIKucniBroj": "Unesite ulicu i kucni broj fizičke osobe.",
+                //"KontrolaPovezanosti.PravnaOsoba.Naziv": "Upišite naziv pravne osobe.",
+                //"KontrolaPovezanosti.PravnaOsoba.OIB": {
+                //    required: "Upišite OIB pravne osobe.",
+                //    rangelength: "Unesite ispravan OIB pravne osobe."
+                //},
+                //"KontrolaPovezanosti.PravnaOsoba.Mjesto": "Upišite mjesto pravne osobe.",
+                //"KontrolaPovezanosti.PravnaOsoba.UlicaIKucniBroj": "Upišite ulicu i kućni broj pravne osobe.",
+                //"KontrolaPovezanosti.PravnaOsoba.DokazOUplacenojNaknadi": "Potvrdite dokaz o uplaćenoj naknadi.",
                 "DokumentPodaci.MjestoIzrade": "Upišite mjesto izrade",
                 "DokumentPodaci.DatumIzrade": {
                     required: "Upišite datum izrade"
@@ -144,19 +146,10 @@ $().ready(function () {
     kontrolaPovezanosti.click(function () {
         if ($("input[name='KontrolaPovezanosti.KontrolaPovlastenosti']").prop("checked")) {
             $("#podaciKontrolaPovezanosti").removeClass("hide");
-
-            // provjeri šta je označeno, fizička ili pravna osoba, pa hajdaj šta treba
-            if ($("input[name='KontrolaPovezanosti.PravnaIliFizickaOsoba']:checked").val() === "fizickaOsoba") {
-                $("#podaciKontrolaPovezanostiFizickaOsoba").removeClass("hide");
-            } else {
-                $("#podaciKontrolaPovezanostiPravnaOsoba").removeClass("hide");
-            }
         }
         else {
             // hajdaj podaciKontrolaPovezanosti
             $("#podaciKontrolaPovezanosti").addClass("hide");
-            $("#podaciKontrolaPovezanostiFizickaOsoba").addClass("hide");
-            $("#podaciKontrolaPovezanostiPravnaOsoba").addClass("hide");
         }
     });
 
@@ -263,3 +256,54 @@ $("#DokumentPodaci_DatumIzrade").datepicker({
 });
 $.datepicker.setDefaults($.datepicker.regional['hr']);
 $("#DokumentPodaci_DatumIzrade").datepicker("setDate", new Date());
+
+function FizickaOsobaViewModel() {
+    var self = this;
+
+    self.Ime = '';
+    self.Prezime = '';
+    self.OIB = '';
+    self.UlicaIKucniBroj = '';
+}
+
+function PravnaOsobaViewModel() {
+    var self = this;
+
+    self.Naziv = '';
+    self.OIB = '';
+    self.Mjesto = '';
+    self.UlicaIKucniBroj = '';
+    self.DokazOUplacenojNaknadi = false;
+}
+
+
+function KontrolaPovezanostiViewModel() {
+    var self = this;
+
+    self.FizickeOsobe = ko.observableArray();
+
+    self.AddFizickaOsoba = function () {
+        self.FizickeOsobe.push(new FizickaOsobaViewModel());
+    };
+
+    self.RemoveFizickaOsoba = function (fizickaOsoba) {
+        self.FizickeOsobe.pop(fizickaOsoba);
+    }
+
+    self.PravneOsobe = ko.observableArray();
+
+    self.AddPravnaOsoba = function () {
+        self.PravneOsobe.push(new PravnaOsobaViewModel());
+    };
+
+    self.RemovePravnaOsoba = function (pravnaOsoba) {
+        self.PravnaOsobe.pop(pravnaOsoba);
+    }
+
+    self.tipOsobe = [
+        { tipOsobe: "Fizička" },
+        { tipOsobe: "Pravna" },
+    ]; 
+
+
+}
