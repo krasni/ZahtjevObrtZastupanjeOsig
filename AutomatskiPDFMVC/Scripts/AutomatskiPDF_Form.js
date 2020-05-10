@@ -366,5 +366,18 @@ function DefineValidationRulesKontrolaPovezanosti() {
     $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-OIB", { fizickaOsobaOIBRequired: true, fizickaOsobaOIBDuzina: [9, 9] });
     $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-mjesto", { fizickaOsobaMjestoRequired: true });
     $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-ulicaikucnibroj", { fizickaOsobaUlicaIKucniBrojRequired: true });
+
+    $.validator.addMethod("pravnaOsobaNazivRequired", $.validator.methods.required, "Upišite naziv pravne osobe");
+    $.validator.addMethod("pravnaOsobaOIBRequired", $.validator.methods.required, "Upišite OIB pravne osobe");
+    $.validator.addMethod("pravnaOsobaOIBDuzina", $.validator.methods.rangelength, "Upišite ispravan OIB pravne osobe");
+    $.validator.addMethod("pravnaOsobaMjestoRequired", $.validator.methods.required, "Upišite mjesto pravne osobe");
+    $.validator.addMethod("pravnaOsobaUlicaIKucniBrojRequired", $.validator.methods.required, "Upišite ulicu i kućni broj pravne osobe");
+    $.validator.addMethod("pravnaOsobaDokazOUplacenojNaknadi", $.validator.methods.required, "Potvrdite dokaz o uplaćenoj naknadi");
+
+    $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-naziv", { pravnaOsobaNazivRequired: true });
+    $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-OIB", { pravnaOsobaOIBRequired: true, pravnaOsobaOIBDuzina: [9, 9] });
+    $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-mjesto", { pravnaOsobaMjestoRequired: true });
+    $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-ulicaikucnibroj", { pravnaOsobaUlicaIKucniBrojRequired: true });
+    $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-dokazouplaceonjnaknadi", { pravnaOsobaDokazOUplacenojNaknadi: true });
 }
 
