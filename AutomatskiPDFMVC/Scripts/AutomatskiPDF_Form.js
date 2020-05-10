@@ -346,6 +346,6 @@ function DefineValidationRulesKontrolaPovezanosti() {
     $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-OIB", { pravnaOsobaOIBRequired: true, pravnaOsobaOIBDuzina: [11, 11] });
     $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-mjesto", { pravnaOsobaMjestoRequired: true });
     $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-ulicaikucnibroj", { pravnaOsobaUlicaIKucniBrojRequired: true });
-    $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-dokazouplaceonjnaknadi", { pravnaOsobaDokazOUplacenojNaknadi: true });
+    $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-dokazouplacenojnaknadi", { pravnaOsobaDokazOUplacenojNaknadi: true });
 }
 

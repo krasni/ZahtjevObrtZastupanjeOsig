@@ -210,15 +210,19 @@
                     *Kontrolu povezanosti popuniti samo u slučaju kada postoji povezanost iz članka 3. točke 26. Zakona o osiguranju: dvije ili više fizičkih ili pravnih osoba osobe koje su povezane kontrolom ili sudjelovanjem ili položaj u kojem su dvije ili više fizičkih ili pravnih osoba trajno povezane s jednom te istom osobom odnosom kontrole (izjavu daje osnivač/i navedenog obrta)
                 </div>
                 <div id="podaciKontrolaPovezanosti">
-                    <table class="table table-dark">
+
+                    <br />
+                    <b>Fizičke osobe</b>
+
+                    <table class="table table-striped  table-bordered table-dark  table-hover">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col" style="width:15%">Ime</th>
-                                <th scope="col" style="width:15%">Prezime</th>
-                                <th scope="col" style="width:15%">OIB</th>
-                                <th scope="col" style="width:15%">Mjesto</th>
-                                <th scope="col" style="width:15%">Ulica i kućni broj</th>
-                                <th scope="col" style="width:25%"><button type="button" class="btn btn-primary" data-bind="click: $root.AddFizickaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) < 10">Dodaj fizičku osobu</button></th>
+                                <th scope="col" style="width:19%">Ime</th>
+                                <th scope="col" style="width:19%">Prezime</th>
+                                <th scope="col" style="width:19%">OIB</th>
+                                <th scope="col" style="width:19%">Mjesto</th>
+                                <th scope="col" style="width:19%">Ulica i kućni broj</th>
+                                <th scope="col" style="width:5%"><button class="btn btn-default" data-bind="click: $root.AddFizickaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) < 10"> <i class="fas fa-plus"></i> </button></th>
                             </tr>
                         </thead>
                         <tbody data-bind="foreach: FizickeOsobe">
@@ -239,20 +243,24 @@
                                     <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, attr: {name: 'KontrolaPovezanosti.FizickeOsobe[' + $index() + '].UlicaIKucniBroj'}" />
                                 </td>
                                 <td>
-                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba" value="X" />
+                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba" value="X"/>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <table class="table table-striped  table-bordered table-dark  table-hover">
+
+                    <br />
+                    <b>Pravne osobe</b>
+
+                    <table class="table table-striped  table-bordered table-dark table-hover">
                         <thead class="thead-dark">
                             <tr>
-                                <th style="width:16%">Naziv</th>
-                                <th style="width:16%">OIB</th>
-                                <th style="width:16%">Mjesto</th>
-                                <th style="width:16%">Ulica i kućni broj</th>
-                                <th style="width:16%">DokazOUplacenojNaknadi</th>
-                                <th style="width:10%"><button type="button" class="btn btn-primary" data-bind="click: $root.AddPravnaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) < 10">Dodaj pravnu osobu</button></th>
+                                <th style="width:19%">Naziv</th>
+                                <th style="width:19%">OIB</th>
+                                <th style="width:19%">Mjesto</th>
+                                <th style="width:19%">Ulica i kućni broj</th>
+                                <th style="width:19%">Naknada uplaćena</th>
+                                <th scope="col" style="width:5%"><button class="btn btn-default" data-bind="click: $root.AddPravnaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) < 10"> <i class="fas fa-plus"></i> </button></th>
                             </tr>
                         </thead>
                         <tbody data-bind="foreach: PravneOsobe">
