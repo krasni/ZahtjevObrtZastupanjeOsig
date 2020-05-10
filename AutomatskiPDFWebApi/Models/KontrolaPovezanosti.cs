@@ -10,7 +10,7 @@ namespace AutomatskiPDFWebApi.Models
     [Validator(typeof(KontrolaPovezanostiValidator))]
     public class KontrolaPovezanosti
     {
-        public bool? KontrolaPovlastenosti { get; set; }
+        public bool? KontrolaPovlastenosti { get; set; };
         public string PravnaIliFizickaOsoba { get; set; }
         public FizickaOsoba FizickaOsoba { get; set; }
         public PravnaOsoba PravnaOsoba { get; set; }

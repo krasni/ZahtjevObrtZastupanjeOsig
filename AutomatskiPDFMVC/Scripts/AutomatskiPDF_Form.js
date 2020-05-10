@@ -7,16 +7,62 @@ $().ready(function () {
     }, "Upišite ispravan datum");
 
     $('#form1').submit(function (evt) {
-        if ($('#form1').valid()) {
-            blockUIForDownload();
-        }
-        else {
-            evt.preventDefault();
-        }
+        //if ($('#form1').valid()) {
+        //    blockUIForDownload();
+        //}
+        //else {
+        //    evt.preventDefault();
+        //}
+        evt.preventDefault();
     });
 
     $(function () {
-        ko.applyBindings(new KontrolaPovezanostiViewModel());
+        DefineValidationRulesKontrolaPovezanosti();
+
+        ko.bindingHandlers.dump = {
+            init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+                var context = valueAccessor();
+                var allBindings = allBindingsAccessor();
+                var pre = document.createElement('pre');
+
+                element.appendChild(pre);
+
+                var dumpJSON = ko.computed({
+                    read: function () {
+                        return ko.toJSON(context, null, 2);
+                    },
+                    disposeWhenNodeIsRemoved: element
+                });
+
+                ko.applyBindingsToNode(pre,
+                    { text: dumpJSON }
+                );
+            }
+        };
+
+        (function () {
+            var existing = ko.bindingProvider.instance;
+
+            ko.bindingProvider.instance = {
+                nodeHasBindings: existing.nodeHasBindings,
+                getBindings: function (node, bindingContext) {
+                    var bindings;
+                    try {
+                        bindings = existing.getBindings(node, bindingContext);
+                    }
+                    catch (ex) {
+                        if (window.console && console.log) {
+                            console.log("binding error", ex.message, node, bindingContext);
+                        }
+                    }
+
+                    return bindings;
+                }
+            };
+
+        })();
+
+        ko.applyBindings(new KontrolaPovezanostiViewModel(), document.getElementById("podaciKontrolaPovezanosti"));
 
         $("#form1").validate({
             rules: {
@@ -263,6 +309,7 @@ function FizickaOsobaViewModel() {
     self.Ime = '';
     self.Prezime = '';
     self.OIB = '';
+    self.Mjesto = '';
     self.UlicaIKucniBroj = '';
 }
 
@@ -297,13 +344,27 @@ function KontrolaPovezanostiViewModel() {
     };
 
     self.RemovePravnaOsoba = function (pravnaOsoba) {
-        self.PravnaOsobe.pop(pravnaOsoba);
+        self.PravneOsobe.pop(pravnaOsoba);
     }
 
     self.tipOsobe = [
         { tipOsobe: "Fizička" },
         { tipOsobe: "Pravna" },
-    ]; 
-
-
+    ];
 }
+
+function DefineValidationRulesKontrolaPovezanosti() {
+    $.validator.addMethod("fizickaOsobaImeRequired", $.validator.methods.required, "Upišite ime fizičke osobe");
+    $.validator.addMethod("fizickaOsobaPrezimeRequired", $.validator.methods.required, "Upišite prezime fizičke osobe");
+    $.validator.addMethod("fizickaOsobaOIBRequired", $.validator.methods.required, "Upišite OIB fizičke osobe");
+    $.validator.addMethod("fizickaOsobaOIBDuzina", $.validator.methods.rangelength, "Upišite ispravan OIB fizičke osobe");
+    $.validator.addMethod("fizickaOsobaMjestoRequired", $.validator.methods.required, "Upišite mjesto fizičke osobe");
+    $.validator.addMethod("fizickaOsobaUlicaIKucniBrojRequired", $.validator.methods.required, "Upišite ulicu i kućni broj fizičke osobe");
+
+    $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-ime", { fizickaOsobaImeRequired: true });
+    $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-prezime", { fizickaOsobaPrezimeRequired: true });
+    $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-OIB", { fizickaOsobaOIBRequired: true, fizickaOsobaOIBDuzina: [9, 9] });
+    $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-mjesto", { fizickaOsobaMjestoRequired: true });
+    $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-ulicaikucnibroj", { fizickaOsobaUlicaIKucniBrojRequired: true });
+}
+

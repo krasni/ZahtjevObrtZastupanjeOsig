@@ -21,6 +21,43 @@
     <link rel="stylesheet" href="~/Content/themes/base/jquery-ui.min.css">
 
     <script src="https://kit.fontawesome.com/3cce785412.js" SameSite="none Secure" crossorigin="anonymous"></script>
+
+    <style>
+        .validate-kontrolapovezanosti-fizickaosoba-ime {
+        }
+
+        .validate-kontrolapovezanosti-fizickaosoba-prezime {
+        }
+
+        .validate-kontrolapovezanosti-fizickaosoba-OIB {
+        }
+
+        .validate-kontrolapovezanosti-fizickaosoba-mjesto {
+        }
+
+        .validate-kontrolapovezanosti-fizickaosoba-ulicaikucnibroj {
+        }
+
+
+
+
+        .validate-kontrolapovezanosti-pravnaosoba-naziv {
+        }
+
+        .validate-kontrolapovezanosti-pravnaosoba-OIB {
+        }
+
+        .validate-kontrolapovezanosti-pravnaosoba-mjesto {
+        }
+
+        .validate-kontrolapovezanosti-pravnaosoba-ulicaikucnibroj {
+        }
+
+        .validate-kontrolapovezanosti-pravnaosoba-dokazouplacenojnaknadi {
+        }
+
+    </style>
+
 </head>
 <body>
     <form id="form1" class="form-horizontal" role="form" method="post">
@@ -176,25 +213,30 @@
                     <table class="table table-condensed">
                         <thead>
                             <tr>
-                                <th style="width:20%">Ime</th>
-                                <th style="width:20%">Prezime</th>
-                                <th style="width:20%">OIB</th>
-                                <th style="width:20%">Ulica i kućni broj</th>
-                                <th style="width:20%"><button type="button" class="btn btn-default" data-bind="click: $root.AddFizickaOsoba">Dodaj fizičku osobu</button></th>
+                                <th style="width:15%">Ime</th>
+                                <th style="width:15%">Prezime</th>
+                                <th style="width:15%">OIB</th>
+                                <th style="width:15%">Mjesto</th>
+                                <th style="width:15%">Ulica i kućni broj</th>
+                                <th style="width:25%"><button type="button" class="btn btn-default" data-bind="click: $root.AddFizickaOsoba">Dodaj fizičku osobu</button></th>
                             </tr>
                         </thead>
                         <tbody data-bind="foreach: FizickeOsobe">
                             <tr>
                                 <td>
-                                    <input type="text" class="form-control" data-bind="value: Ime, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-ime" data-bind="value: Ime, uniqueName: true" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" data-bind="value: Prezime, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-prezime" data-bind="value: Prezime, uniqueName: true" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" data-bind="value: OIB, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-OIB" data-bind="value: OIB, uniqueName: true" />
+                                </td>
                                 <td>
-                                    <input type="text" class="form-control" data-bind="value: UlicaIKucniBroj, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-mjesto" data-bind="value: Mjesto, uniqueName: true" />
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, uniqueName: true" />
                                 </td>
                                 <td>
                                     <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba" value="X" />
@@ -202,38 +244,40 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="table table-condensed">
-                        <thead>
+                    <table class="table table-striped  table-bordered table-dark  table-hover">
+                        <thead class="thead-dark">
                             <tr>
                                 <th style="width:16%">Naziv</th>
                                 <th style="width:16%">OIB</th>
                                 <th style="width:16%">Mjesto</th>
                                 <th style="width:16%">Ulica i kućni broj</th>
                                 <th style="width:16%">DokazOUplacenojNaknadi</th>
-                                <th style="width:20%"><button type="button" class="btn btn-default" data-bind="click: $root.AddPravnaOsoba">Dodaj pravnu osobu</button></th>
+                                <th style="width:10%"><button type="button" class="btn btn-default" data-bind="click: $root.AddPravnaOsoba">Dodaj pravnu osobu</button></th>
                             </tr>
                         </thead>
                         <tbody data-bind="foreach: PravneOsobe">
-                            <tr>
+                            <tr table-success>
                                 <td>
-                                    <input type="text" class="form-control" data-bind="value: Naziv, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-naziv" data-bind="value: Naziv, uniqueName: true" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" data-bind="value: OIB, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-oib" data-bind="value: OIB, uniqueName: true" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" data-bind="value: Mjesto, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-mjesto" data-bind="value: Mjesto, uniqueName: true" />
                                 <td>
-                                    <input type="text" class="form-control" data-bind="value: UlicaIKucniBroj, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, uniqueName: true" />
                                 <td>
-                                    <input type="checkbox" class="form-control" data-bind="value: DokazOUplacenojNaknadi, uniqueName: true" />
+                                    <input type="checkbox" class="form-control validate-kontrolapovezanosti-pravnaosoba-dokazouplaceonjnaknadi" data-bind="value: DokazOUplacenojNaknadi, uniqueName: true" />
                                 </td>
                                 <td>
-                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba" value="X" />
+                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemovePravnaOsoba" value="X" />
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    @*<div data-bind="dump: FizickeOsobe"></div>*@
                 </div>
                 <br />
                 <div>
