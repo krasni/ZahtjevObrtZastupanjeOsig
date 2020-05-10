@@ -222,7 +222,7 @@
                                 <th scope="col" style="width:19%">OIB</th>
                                 <th scope="col" style="width:19%">Mjesto</th>
                                 <th scope="col" style="width:19%">Ulica i kućni broj</th>
-                                <th scope="col" style="width:5%"><button class="btn btn-default" data-bind="click: $root.AddFizickaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) < 10"> <i class="fas fa-plus"></i> </button></th>
+                                <th scope="col" style="width:5%"><button class="btn btn-default" data-bind="click: $root.AddFizickaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) < kontrolaPovezanostiMaxBrojOsoba"> <i class="fas fa-plus"></i> </button></th>
                             </tr>
                         </thead>
                         <tbody data-bind="foreach: FizickeOsobe">
@@ -243,7 +243,7 @@
                                     <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, attr: {name: 'KontrolaPovezanosti.FizickeOsobe[' + $index() + '].UlicaIKucniBroj'}" />
                                 </td>
                                 <td>
-                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba" value="X"/>
+                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba" value="X" />
                                 </td>
                             </tr>
                         </tbody>
@@ -260,7 +260,7 @@
                                 <th style="width:19%">Mjesto</th>
                                 <th style="width:19%">Ulica i kućni broj</th>
                                 <th style="width:19%">Naknada uplaćena</th>
-                                <th scope="col" style="width:5%"><button class="btn btn-default" data-bind="click: $root.AddPravnaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) < 10"> <i class="fas fa-plus"></i> </button></th>
+                                <th scope="col" style="width:5%"><button class="btn btn-default" data-bind="click: $root.AddPravnaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) < kontrolaPovezanostiMaxBrojOsoba"> <i class="fas fa-plus"></i> </button></th>
                             </tr>
                         </thead>
                         <tbody data-bind="foreach: PravneOsobe">
@@ -342,5 +342,9 @@
     <script src="~/Scripts/AutomatskiPDF_Form.js"></script>
     <script src="~/Scripts/cookiealert.js"></script>
     <script src="~/Scripts/knockout-3.5.1.js"></script>
+
+    <script type="text/javascript">
+    var kontrolaPovezanostiMaxBrojOsoba = "@System.Configuration.ConfigurationManager.AppSettings["KontrolaPovezanostiMaxBrojOsoba"]";
+    </script>
 </body>
 </html> 
