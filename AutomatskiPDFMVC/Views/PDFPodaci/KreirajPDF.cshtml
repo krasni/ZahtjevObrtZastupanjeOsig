@@ -224,19 +224,19 @@
                         <tbody data-bind="foreach: FizickeOsobe">
                             <tr>
                                 <td>
-                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-ime" data-bind="value: Ime, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-ime" data-bind="value: Ime, attr: {name: 'KontrolaPovezanosti.FizickeOsobe[' + $index() + '].Ime'}" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-prezime" data-bind="value: Prezime, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-prezime" data-bind="value: Prezime, attr: {name: 'KontrolaPovezanosti.FizickeOsobe[' + $index() + '].Prezime'}" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-OIB" data-bind="value: OIB, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-OIB" data-bind="value: OIB, attr: {name: 'KontrolaPovezanosti.FizickeOsobe[' + $index() + '].OIB'}" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-mjesto" data-bind="value: Mjesto, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-mjesto" data-bind="value: Mjesto, attr: {name: 'KontrolaPovezanosti.FizickeOsobe[' + $index() + '].Mjesto'}" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, attr: {name: 'KontrolaPovezanosti.FizickeOsobe[' + $index() + '].UlicaIKucniBroj'}" />
                                 </td>
                                 <td>
                                     <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba" value="X" />
@@ -258,19 +258,19 @@
                         <tbody data-bind="foreach: PravneOsobe">
                             <tr table-success>
                                 <td>
-                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-naziv" data-bind="value: Naziv, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-naziv" data-bind="value: Naziv, attr: {name: 'KontrolaPovezanosti.PravneOsobe[' + $index() + '].Naziv'}" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-OIB" data-bind="value: OIB, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-OIB" data-bind="value: OIB, attr: {name: 'KontrolaPovezanosti.PravneOsobe[' + $index() + '].OIB'}" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-mjesto" data-bind="value: Mjesto, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-mjesto" data-bind="value: Mjesto, attr: {name: 'KontrolaPovezanosti.PravneOsobe[' + $index() + '].Mjesto'}" />
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, uniqueName: true" />
+                                    <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, attr: {name: 'KontrolaPovezanosti.PravneOsobe[' + $index() + '].UlicaIKucniBroj'}" />
                                 </td>
                                 <td>
-                                    <input type="checkbox" class="form-control validate-kontrolapovezanosti-pravnaosoba-dokazouplaceonjnaknadi" data-bind="value: DokazOUplacenojNaknadi, uniqueName: true" />
+                                    <input type="checkbox" class="form-control validate-kontrolapovezanosti-pravnaosoba-dokazouplacenojnaknadi" data-bind="checked: DokazOUplacenojNaknadi, attr: {name: 'KontrolaPovezanosti.PravneOsobe[' + $index() + '].DokazOUplacenojNaknadi'}" />
                                 </td>
                                 <td>
                                     <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemovePravnaOsoba" value="X" />

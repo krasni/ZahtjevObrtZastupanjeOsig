@@ -7,13 +7,13 @@ $().ready(function () {
     }, "Upišite ispravan datum");
 
     $('#form1').submit(function (evt) {
-        //if ($('#form1').valid()) {
-        //    blockUIForDownload();
-        //}
-        //else {
-        //    evt.preventDefault();
-        //}
-        evt.preventDefault();
+        if ($('#form1').valid()) {
+            blockUIForDownload();
+        }
+        else {
+            evt.preventDefault();
+        }
+        //evt.preventDefault();
     });
 
     $(function () {
@@ -94,22 +94,6 @@ $().ready(function () {
                 "OvlasteniZastupnik.BrojURegistruHanfe": "required",
                 "OvlasteniZastupnik.Mjesto": "required",
                 "OvlasteniZastupnik.UlicaIKucniBroj": "required",
-                //"KontrolaPovezanosti.FizickaOsoba.Ime": "required",
-                //"KontrolaPovezanosti.FizickaOsoba.Prezime": "required",
-                //"KontrolaPovezanosti.FizickaOsoba.OIB": {
-                //    required: true,
-                //    rangelength: [11, 11]
-                //},
-                //"KontrolaPovezanosti.FizickaOsoba.Mjesto": "required",
-                //"KontrolaPovezanosti.FizickaOsoba.UlicaIKucniBroj": "required",
-                //"KontrolaPovezanosti.PravnaOsoba.Naziv": "required",
-                //"KontrolaPovezanosti.PravnaOsoba.OIB": {
-                //    required: true,
-                //    rangelength: [11, 11]
-                //},
-                //"KontrolaPovezanosti.PravnaOsoba.Mjesto": "required",
-                //"KontrolaPovezanosti.PravnaOsoba.UlicaIKucniBroj": "required",
-                //"KontrolaPovezanosti.PravnaOsoba.DokazOUplacenojNaknadi": "required",
                 "DokumentPodaci.MjestoIzrade": "required",
                 "DokumentPodaci.DatumIzrade": {
                     required: true,
@@ -149,22 +133,6 @@ $().ready(function () {
                 "OvlasteniZastupnik.BrojURegistruHanfe": "Unesite broj u registru Hanfe ovlaštenog zastupnika.",
                 "OvlasteniZastupnik.Mjesto": "Unesite mjesto ovlaštenog zastupnika.",
                 "OvlasteniZastupnik.UlicaIKucniBroj": "Unesite ulicu i kućni broj ovlaštenog zastupnika.",
-                //"KontrolaPovezanosti.FizickaOsoba.Ime": "Unesite ime fizičke osobe.",
-                //"KontrolaPovezanosti.FizickaOsoba.Prezime": "Unesite prezime fizičke osobe.",
-                //"KontrolaPovezanosti.FizickaOsoba.OIB": {
-                //    required: "Unesite OIB fizičke osobe.",
-                //    rangelength: "Unesite ispravan OIB fizičke osobe."
-                //},
-                //"KontrolaPovezanosti.FizickaOsoba.Mjesto": "Unesite mjesto fizičke osobe.",
-                //"KontrolaPovezanosti.FizickaOsoba.UlicaIKucniBroj": "Unesite ulicu i kucni broj fizičke osobe.",
-                //"KontrolaPovezanosti.PravnaOsoba.Naziv": "Upišite naziv pravne osobe.",
-                //"KontrolaPovezanosti.PravnaOsoba.OIB": {
-                //    required: "Upišite OIB pravne osobe.",
-                //    rangelength: "Unesite ispravan OIB pravne osobe."
-                //},
-                //"KontrolaPovezanosti.PravnaOsoba.Mjesto": "Upišite mjesto pravne osobe.",
-                //"KontrolaPovezanosti.PravnaOsoba.UlicaIKucniBroj": "Upišite ulicu i kućni broj pravne osobe.",
-                //"KontrolaPovezanosti.PravnaOsoba.DokazOUplacenojNaknadi": "Potvrdite dokaz o uplaćenoj naknadi.",
                 "DokumentPodaci.MjestoIzrade": "Upišite mjesto izrade",
                 "DokumentPodaci.DatumIzrade": {
                     required: "Upišite datum izrade"
@@ -363,7 +331,7 @@ function DefineValidationRulesKontrolaPovezanosti() {
 
     $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-ime", { fizickaOsobaImeRequired: true });
     $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-prezime", { fizickaOsobaPrezimeRequired: true });
-    $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-OIB", { fizickaOsobaOIBRequired: true, fizickaOsobaOIBDuzina: [9, 9] });
+    $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-OIB", { fizickaOsobaOIBRequired: true, fizickaOsobaOIBDuzina: [11, 11] });
     $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-mjesto", { fizickaOsobaMjestoRequired: true });
     $.validator.addClassRules("validate-kontrolapovezanosti-fizickaosoba-ulicaikucnibroj", { fizickaOsobaUlicaIKucniBrojRequired: true });
 
@@ -375,7 +343,7 @@ function DefineValidationRulesKontrolaPovezanosti() {
     $.validator.addMethod("pravnaOsobaDokazOUplacenojNaknadi", $.validator.methods.required, "Potvrdite dokaz o uplaćenoj naknadi");
 
     $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-naziv", { pravnaOsobaNazivRequired: true });
-    $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-OIB", { pravnaOsobaOIBRequired: true, pravnaOsobaOIBDuzina: [9, 9] });
+    $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-OIB", { pravnaOsobaOIBRequired: true, pravnaOsobaOIBDuzina: [11, 11] });
     $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-mjesto", { pravnaOsobaMjestoRequired: true });
     $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-ulicaikucnibroj", { pravnaOsobaUlicaIKucniBrojRequired: true });
     $.validator.addClassRules("validate-kontrolapovezanosti-pravnaosoba-dokazouplaceonjnaknadi", { pravnaOsobaDokazOUplacenojNaknadi: true });

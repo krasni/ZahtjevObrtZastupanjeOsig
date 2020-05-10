@@ -11,8 +11,7 @@ namespace AutomatskiPDFMVC.Models
         [Display(Name = "Kontrola povezanosti")]
         public bool KontrolaPovlastenosti { get; set; }
 
-        public string PravnaIliFizickaOsoba { get; set; }
-        public FizickaOsoba FizickaOsoba { get; set; }
-        public PravnaOsoba PravnaOsoba { get; set; }
+        public List<FizickaOsoba> FizickeOsobe  { get; set; }
+        public List<PravnaOsoba> PravneOsobe { get; set; }
     }
 }
