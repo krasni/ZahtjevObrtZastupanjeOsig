@@ -22,6 +22,12 @@ namespace AutomatskiPDFWebApi.Models
         public EmailPodaci EmailPodaci { get; set; }
 
         public DokumentPodaci DokumentPodaci { get; set; }
+
+        [Display(Name = "Dokaz o uplaćenoj naknadi")]
+        public bool DokazOUplacenojNaknadi
+        {
+            get; set;
+        }
     }
 
     public class PodaciPDFValidator : AbstractValidator<PodaciPDF>

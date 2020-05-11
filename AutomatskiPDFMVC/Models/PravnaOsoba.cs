@@ -12,11 +12,5 @@ namespace AutomatskiPDFMVC.Models
         public string OIB { get; set; }
         public string Mjesto { get; set; }
         public string UlicaIKucniBroj { get; set; }
-
-        [Display(Name = "Dokaz o uplaćenoj naknadi")]
-        public bool DokazOUplacenojNaknadi
-        {
-            get;set;
-        }
     }
 }

@@ -19,6 +19,5 @@ namespace AutomatskiPDFWebApi.Models
 
         public string UlicaIKucniBroj { get; set; }
 
-        public bool DokazOUplacenojNaknadi { get; set; }
     }
 }
