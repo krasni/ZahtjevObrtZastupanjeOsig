@@ -69,18 +69,29 @@ namespace AutomatskiPDFWebApi.Controllers
             // kontrola povezanosti
             if (kontrolaPovezanosti.KontrolaPovlastenosti == true)
             {
-                //letter.ReplaceText("%ImeIPrezimeOsnivacaPov%", String.Format($"{osnivacObrt.Ime} {osnivacObrt.Prezime}"));
+                letter.ReplaceText("%ImeIPrezimeOsnivacaPov%", String.Format($"{osnivacObrt.Ime} {osnivacObrt.Prezime}"));
 
-                //if (kontrolaPovezanosti.PravnaIliFizickaOsoba == "fizickaOsoba")
-                //{
-                //    letter.ReplaceText("%Povezanost%", String.Format($"{kontrolaPovezanosti.FizickaOsoba.Ime} {kontrolaPovezanosti.FizickaOsoba.Prezime}, " +
-                //        $"{ kontrolaPovezanosti.FizickaOsoba.Mjesto}, { kontrolaPovezanosti.FizickaOsoba.UlicaIKucniBroj}, {kontrolaPovezanosti.FizickaOsoba.OIB}"));
-                //}
-                //else if (kontrolaPovezanosti.PravnaIliFizickaOsoba == "pravnaOsoba")
-                //{
-                //    letter.ReplaceText("%Povezanost%", String.Format($"{kontrolaPovezanosti.PravnaOsoba.Naziv}, " +
-                //       $"{ kontrolaPovezanosti.PravnaOsoba.Mjesto}, { kontrolaPovezanosti.PravnaOsoba.UlicaIKucniBroj}, {kontrolaPovezanosti.PravnaOsoba.OIB}"));
-                //}
+                string povezanostText = "";
+
+                if (kontrolaPovezanosti.FizickeOsobe.Any())
+                {
+                    foreach(var fizickaOsoba in kontrolaPovezanosti.FizickeOsobe)
+                    {
+                        povezanostText += String.Format($"{fizickaOsoba.Ime} {fizickaOsoba.Prezime}, " +
+                        $"{ fizickaOsoba.Mjesto}, { fizickaOsoba.UlicaIKucniBroj}, OIB: {fizickaOsoba.OIB}, ");
+                    }
+                }
+
+                if (kontrolaPovezanosti.PravneOsobe.Any())
+                {
+                    foreach (var pravnaOsoba in kontrolaPovezanosti.PravneOsobe)
+                    {
+                        povezanostText += String.Format($"{pravnaOsoba.Naziv}, " +
+                       $"{ pravnaOsoba.Mjesto}, { pravnaOsoba.UlicaIKucniBroj}, OIB: {pravnaOsoba.OIB}, ");
+                    }
+                }
+
+                letter.ReplaceText("%Povezanost%", povezanostText.Remove(povezanostText.Length - 2));
             }
             else
             {
