@@ -38,7 +38,6 @@ namespace AutomatskiPDFWebApi.Models
             RuleFor(podaciPDF => podaciPDF.OvlasteniZastupnik).SetValidator(new OvlasteniZastupnikValidator());
 
             RuleFor(podaciPDF => podaciPDF.KontrolaPovezanosti).NotEmpty().WithMessage("{PropertyName} je obavezan podatak."); ;
-            RuleFor(podaciPDF => podaciPDF.KontrolaPovezanosti).SetValidator(new KontrolaPovezanostiValidator());
 
             RuleFor(podaciPDF => podaciPDF.EmailPodaci).NotEmpty().WithMessage("{PropertyName} je obavezan podatak.");
             RuleFor(podaciPDF => podaciPDF.EmailPodaci).SetValidator(new EmailPodaciValidator());

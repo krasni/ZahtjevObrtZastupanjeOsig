@@ -161,37 +161,9 @@ $().ready(function () {
         if ($("input[name='KontrolaPovezanosti.KontrolaPovlastenosti']").prop("checked")) {
             $("#podaciKontrolaPovezanosti").removeClass("hide");
         }
-        else {
+        else {  
             // hajdaj podaciKontrolaPovezanosti
             $("#podaciKontrolaPovezanosti").addClass("hide");
-        }
-    });
-
-    var initialKontrolaPovezanostiPravnaIliFizickaOsoba = $("input[name='KontrolaPovezanosti.PravnaIliFizickaOsoba']:checked").val();
-
-    if (initialKontrolaPovezanosti === true) {
-        if (initialKontrolaPovezanostiPravnaIliFizickaOsoba === 'pravnaOsoba') {
-            $("#podaciKontrolaPovezanostiPravnaOsoba").removeClass("hide");
-            $("#podaciKontrolaPovezanostiFizickaOsoba").addClass("hide");
-        }
-        else if (initialKontrolaPovezanostiPravnaIliFizickaOsoba === 'fizickaOsoba') {
-            $("#podaciKontrolaPovezanostiFizickaOsoba").removeClass("hide");
-            $("#podaciKontrolaPovezanostiPravnaOsoba").addClass("hide");
-        }
-    }
-    else {
-        $("#podaciKontrolaPovezanostiFizickaOsoba").addClass("hide");
-        $("#podaciKontrolaPovezanostiPravnaOsoba").addClass("hide");   
-    }
-
-    $("input[name='KontrolaPovezanosti.PravnaIliFizickaOsoba']").change(function () {
-        if (this.id === 'pravnaOsoba') {
-            $("#podaciKontrolaPovezanostiPravnaOsoba").removeClass("hide"); 
-            $("#podaciKontrolaPovezanostiFizickaOsoba").addClass("hide"); 
-        }
-        else if (this.id === 'fizickaOsoba') {
-            $("#podaciKontrolaPovezanostiFizickaOsoba").removeClass("hide");
-            $("#podaciKontrolaPovezanostiPravnaOsoba").addClass("hide");   
         }
     });
 
@@ -295,7 +267,9 @@ function PravnaOsobaViewModel() {
 function KontrolaPovezanostiViewModel() {
     var self = this;
 
-    self.FizickeOsobe = ko.observableArray();
+    self.FizickeOsobe = ko.observableArray([
+        { Ime: "", Prezime: "", OIB: "", Mjesto: "", UlicaIKucniBroj: "" }
+    ]);
 
     self.AddFizickaOsoba = function () {
         self.FizickeOsobe.push(new FizickaOsobaViewModel());

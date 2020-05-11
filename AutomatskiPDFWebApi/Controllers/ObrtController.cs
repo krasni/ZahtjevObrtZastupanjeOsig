@@ -69,18 +69,18 @@ namespace AutomatskiPDFWebApi.Controllers
             // kontrola povezanosti
             if (kontrolaPovezanosti.KontrolaPovlastenosti == true)
             {
-                letter.ReplaceText("%ImeIPrezimeOsnivacaPov%", String.Format($"{osnivacObrt.Ime} {osnivacObrt.Prezime}"));
+                //letter.ReplaceText("%ImeIPrezimeOsnivacaPov%", String.Format($"{osnivacObrt.Ime} {osnivacObrt.Prezime}"));
 
-                if (kontrolaPovezanosti.PravnaIliFizickaOsoba == "fizickaOsoba")
-                {
-                    letter.ReplaceText("%Povezanost%", String.Format($"{kontrolaPovezanosti.FizickaOsoba.Ime} {kontrolaPovezanosti.FizickaOsoba.Prezime}, " +
-                        $"{ kontrolaPovezanosti.FizickaOsoba.Mjesto}, { kontrolaPovezanosti.FizickaOsoba.UlicaIKucniBroj}, {kontrolaPovezanosti.FizickaOsoba.OIB}"));
-                }
-                else if (kontrolaPovezanosti.PravnaIliFizickaOsoba == "pravnaOsoba")
-                {
-                    letter.ReplaceText("%Povezanost%", String.Format($"{kontrolaPovezanosti.PravnaOsoba.Naziv}, " +
-                       $"{ kontrolaPovezanosti.PravnaOsoba.Mjesto}, { kontrolaPovezanosti.PravnaOsoba.UlicaIKucniBroj}, {kontrolaPovezanosti.PravnaOsoba.OIB}"));
-                }
+                //if (kontrolaPovezanosti.PravnaIliFizickaOsoba == "fizickaOsoba")
+                //{
+                //    letter.ReplaceText("%Povezanost%", String.Format($"{kontrolaPovezanosti.FizickaOsoba.Ime} {kontrolaPovezanosti.FizickaOsoba.Prezime}, " +
+                //        $"{ kontrolaPovezanosti.FizickaOsoba.Mjesto}, { kontrolaPovezanosti.FizickaOsoba.UlicaIKucniBroj}, {kontrolaPovezanosti.FizickaOsoba.OIB}"));
+                //}
+                //else if (kontrolaPovezanosti.PravnaIliFizickaOsoba == "pravnaOsoba")
+                //{
+                //    letter.ReplaceText("%Povezanost%", String.Format($"{kontrolaPovezanosti.PravnaOsoba.Naziv}, " +
+                //       $"{ kontrolaPovezanosti.PravnaOsoba.Mjesto}, { kontrolaPovezanosti.PravnaOsoba.UlicaIKucniBroj}, {kontrolaPovezanosti.PravnaOsoba.OIB}"));
+                //}
             }
             else
             {

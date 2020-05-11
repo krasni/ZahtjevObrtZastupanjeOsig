@@ -20,16 +20,4 @@ namespace AutomatskiPDFWebApi.Models
 
         public string UlicaIKucniBroj { get; set; }
     }
-
-    public class FizickaOsobaValidator : AbstractValidator<FizickaOsoba>
-    {
-        public FizickaOsobaValidator()
-        {
-            RuleFor(fizickaOsoba => fizickaOsoba.Ime).NotEmpty().WithMessage("Unesite naziv fizičke osobe.");
-            RuleFor(fizickaOsoba => fizickaOsoba.Prezime).NotEmpty().WithMessage("Unesite prezime fizičke osobe.");
-            RuleFor(fizickaOsoba => fizickaOsoba.OIB).NotEmpty().WithMessage("Unesite OIB fizičke osobe.").Matches("[0-9]{11}$").WithMessage("Unesite ispravan OIB fizičke osobe");
-            RuleFor(fizickaOsoba => fizickaOsoba.Mjesto).NotEmpty().WithMessage("Unesite mjesto fizičke osobe.");
-            RuleFor(fizickaOsoba => fizickaOsoba.UlicaIKucniBroj).NotEmpty().WithMessage("Unesite ulicu i kućni broj fizičke osobe.");
-        }
-    }
 }

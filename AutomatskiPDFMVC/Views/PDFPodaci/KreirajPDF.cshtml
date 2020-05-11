@@ -278,7 +278,7 @@
                                     <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, attr: {name: 'KontrolaPovezanosti.PravneOsobe[' + $index() + '].UlicaIKucniBroj'}" />
                                 </td>
                                 <td>
-                                    <input type="checkbox" class="form-control validate-kontrolapovezanosti-pravnaosoba-dokazouplacenojnaknadi" data-bind="checked: DokazOUplacenojNaknadi, attr: {name: 'KontrolaPovezanosti.PravneOsobe[' + $index() + '].DokazOUplacenojNaknadi'}" />
+                                    <input type="checkbox" value="true" class="form-control validate-kontrolapovezanosti-pravnaosoba-dokazouplacenojnaknadi" data-bind="checked: DokazOUplacenojNaknadi, attr: {name: 'KontrolaPovezanosti.PravneOsobe[' + $index() + '].DokazOUplacenojNaknadi', id: 'KontrolaPovezanosti_PravneOsobe_' + $index() + '__DokazOUplacenojNaknadi', value:'true'}" />
                                 </td>
                                 <td>
                                     <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemovePravnaOsoba" value="X" />
