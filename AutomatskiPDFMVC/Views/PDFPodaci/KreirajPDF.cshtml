@@ -243,7 +243,7 @@
                                     <input type="text" class="form-control validate-kontrolapovezanosti-fizickaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, attr: {name: 'KontrolaPovezanosti.FizickeOsobe[' + $index() + '].UlicaIKucniBroj'}" />
                                 </td>
                                 <td style="display: block; text-align: center; margin: auto;">
-                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba" value="X" />
+                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveFizickaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) > 1" value="X" />
                                 </td>
                             </tr>
                         </tbody>
@@ -277,7 +277,7 @@
                                     <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, attr: {name: 'KontrolaPovezanosti.PravneOsobe[' + $index() + '].UlicaIKucniBroj'}" />
                                 </td>
                                 <td style="display: block; text-align: center; margin: auto;" >
-                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemovePravnaOsoba" value="X" />
+                                    <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemovePravnaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) > 1" value="X" />
                                 </td>
                             </tr>
                         </tbody>

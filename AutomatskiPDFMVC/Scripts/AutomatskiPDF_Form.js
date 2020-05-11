@@ -282,6 +282,10 @@ function KontrolaPovezanostiViewModel() {
 
     self.PravneOsobe = ko.observableArray();
 
+    self.PravneOsobe = ko.observableArray([
+        { Naziv: "", OIB: "", Mjesto: "", UlicaIKucniBroj: "" }
+    ]);
+
     self.AddPravnaOsoba = function () {
         self.PravneOsobe.push(new PravnaOsobaViewModel());
     };
