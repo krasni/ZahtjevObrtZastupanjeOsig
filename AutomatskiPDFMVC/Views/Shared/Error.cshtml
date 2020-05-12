@@ -1,13 +1,33 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
+    <link rel="stylesheet" media="screen" href="~/Content/Site.css">
+    <title>Greška</title>
 </head>
-<body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
+<body style="padding:0">
+    <a href='@Url.Action("KreirajPDF", "PDFPodaci")'>
+        <img src='@Url.Content("~/Content/images/hanfa-logo.png")' />
+    </a>
+
+    <div class="container" style="padding: 0 50px">
+        <div>
+            <p>&nbsp;</p>
+            <p>Poštovani,</p>
+            <p>ispričavamo se, dogodila se neočekivana greška.</p>
+            <p>Molimo Vas da kontaktirate podršku na e-mail adresi: <a href="mailto:onlinezahtjevi@hanfa.hr">onlinezahtjevi@hanfa.hr</a></p>
+            <p>S poštovanjem,</p>
+            <p>Hanfa IT tim</p>
+        </div>
+    </div>
+    <footer>
+        <p class="copy">
+            Copyright © 2020. HANFA, Franje Račkoga 6, 10000 Zagreb — Sva prava pridržana
+        </p>
+    </footer>
 </body>
 </html>

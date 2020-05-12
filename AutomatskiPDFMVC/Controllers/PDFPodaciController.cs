@@ -31,6 +31,7 @@ namespace AutomatskiPDFMVC.Controllers
         // GET: PDFPodaci
         [HttpPost]
         [ExportModelState]
+        [HandleError]
         public ActionResult KreirajPDF(PodaciPDF podaciPDF)
         {
             PodaciPDFClient client = new PodaciPDFClient(ModelState);
@@ -68,6 +69,7 @@ namespace AutomatskiPDFMVC.Controllers
 
         [HttpGet]
         [ImportModelState]
+        [HandleError]
         public ActionResult KreirajPDF()
         {   
             var PodaciPDF = new PodaciPDF();
