@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Generiranje dokumenta</title>
+    <title>ZahtjevObrtZastupanjeOsig</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,7 +61,7 @@
 </head>
 <body>
     <form id="form1" class="form-horizontal" role="form" method="post">
-        <img src="~/Content/images/hanfa-logo.png" style="padding:5px;" alt="Company logo" />
+        <a href="http://www.hanfa.hr"><img src="~/Content/images/hanfa-logo.png" style="padding:5px;" alt="Company logo" /></a>
 
         @Html.HiddenFor(model => model.DownloadToken, new { @id = "download_token_value" })
         @Html.RenderFlashMessages()
@@ -276,7 +276,7 @@
                                 <td>
                                     <input type="text" class="form-control validate-kontrolapovezanosti-pravnaosoba-ulicaikucnibroj" data-bind="value: UlicaIKucniBroj, attr: {name: 'KontrolaPovezanosti.PravneOsobe[' + $index() + '].UlicaIKucniBroj'}" />
                                 </td>
-                                <td style="display: block; text-align: center; margin: auto;" >
+                                <td style="display: block; text-align: center; margin: auto;">
                                     <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemovePravnaOsoba, enable: ($root.PravneOsobe().length + $root.FizickeOsobe().length) > 1" value="X" />
                                 </td>
                             </tr>
@@ -293,7 +293,10 @@
                             @Html.CheckBoxFor(model => model.DokazOUplacenojNaknadi)
                         </div>
                     </div>
-
+                    <div>
+                        *Uz zahtjev je potrebno priložiti dokaz o uplaćenoj naknadi za izdavanje dozvole za obavljanje poslova distribucije osiguranja, prema važećem Pravilniku o vrsti i visini naknada Hrvatske agencije za nadzor financijskih usluga.
+                    </div>
+                    <br />
                     <div class="form-group row required">
                         <label class="col-sm-2 control-label">Mjesto izrade</label>
                         <div class="col-sm-10">
@@ -349,5 +352,6 @@
     <script type="text/javascript">
     var kontrolaPovezanostiMaxBrojOsoba = "@System.Configuration.ConfigurationManager.AppSettings["KontrolaPovezanostiMaxBrojOsoba"]";
     </script>
+
 </body>
 </html> 

@@ -73,7 +73,7 @@ namespace AutomatskiPDFWebApi.Controllers
 
                 string povezanostText = "";
 
-                if (kontrolaPovezanosti.FizickeOsobe.Any())
+                if (kontrolaPovezanosti.FizickeOsobe != null && kontrolaPovezanosti.FizickeOsobe.Any())
                 {
                     foreach(var fizickaOsoba in kontrolaPovezanosti.FizickeOsobe)
                     {
@@ -82,7 +82,7 @@ namespace AutomatskiPDFWebApi.Controllers
                     }
                 }
 
-                if (kontrolaPovezanosti.PravneOsobe.Any())
+                if (kontrolaPovezanosti.PravneOsobe != null && kontrolaPovezanosti.PravneOsobe.Any())
                 {
                     foreach (var pravnaOsoba in kontrolaPovezanosti.PravneOsobe)
                     {
