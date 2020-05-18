@@ -61,7 +61,13 @@ namespace AutomatskiPDFMVC.Controllers
             }
             else
             {
-                Response.AppendCookie(new System.Web.HttpCookie("fileDownloadToken", podaciPDF.DownloadToken));
+                var downloadCookie = new System.Web.HttpCookie("fileDownloadToken", podaciPDF.DownloadToken)
+                {
+                    Path = "/ZahtjevObrtZastupanjeOsig"
+                };
+
+                Response.AppendCookie(downloadCookie);
+
                 return File(pdfBytes.PDFBytes, "application/pdf", pathToPDF.PathToPDF);
             }
         }
