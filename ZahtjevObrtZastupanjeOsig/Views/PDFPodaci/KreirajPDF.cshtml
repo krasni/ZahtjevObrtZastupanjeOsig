@@ -345,9 +345,10 @@
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.blockUI.js"></script>
     <script src="~/Scripts/jquery.cookie.js"></script>
-    <script src="~/Scripts/ZahtjevObrtZastupanjeOsig_Form.js"></script>
     <script src="~/Scripts/cookiealert.js"></script>
     <script src="~/Scripts/knockout-3.5.1.js"></script>
+
+    @Scripts.Render("~/bundles/mybundle")
 
     <script type="text/javascript">
     var kontrolaPovezanostiMaxBrojOsoba = "@System.Configuration.ConfigurationManager.AppSettings["KontrolaPovezanostiMaxBrojOsoba"]";

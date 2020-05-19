@@ -26,7 +26,14 @@ namespace ZahtjevObrtZastupanjeOsig
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            // dodati bundle
+            bundles.Add(new ScriptBundle("~/bundles/mybundle").Include(
+            "~/Scripts/ZahtjevObrtZastupanjeOsig_Form.js"));
+
+#if (DEBUG)
+            BundleTable.EnableOptimizations = false;
+#else
+            BundleTable.EnableOptimizations = true;
+#endif
         }
     }
 }
