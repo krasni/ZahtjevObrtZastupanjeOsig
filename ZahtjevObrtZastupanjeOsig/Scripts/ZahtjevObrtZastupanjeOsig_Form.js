@@ -195,7 +195,7 @@ function blockUIForDownload() {
         var cookieValue = $.cookie('fileDownloadToken');
         if (cookieValue == token)
             finishDownload();
-    }, 1000); 
+    }, 1000);
 }
 
 function finishDownload() {
