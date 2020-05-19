@@ -171,9 +171,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attributes\ModelStateTransfer.cs" />
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Clients\ClientBase.cs" />
-    <Compile Include="Clients\PodaciPDFClient.cs" />
-    <Compile Include="Constants.cs" />
     <Compile Include="Controllers\PDFPodaciController.cs" />
     <Compile Include="Extensions\RestResponseExtensions.cs" />
     <Compile Include="Filters\HandleExceptionsAttribute.cs" />
@@ -271,7 +268,9 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="favicon.ico" />
+    <Content Include="favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Files\dummy.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -280,12 +279,11 @@
     <Content Include="Content\Site.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\AutomatskiPDF_Form.js" />
+    <Content Include="Scripts\ZahtjevObrtZastupanjeOsig_Form.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="libman.json" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
-    <None Include="Properties\PublishProfiles\Stage.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\cookiealert.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -343,16 +341,6 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stage|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE;STAGE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
@@ -367,7 +355,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62945</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54078/ZahtjevObrtZastupanjeOsig</IISUrl>
+          <IISUrl>http://localhost:54079/ZahtjevObrtZastupanjeOsig</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

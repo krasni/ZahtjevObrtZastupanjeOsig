@@ -9,21 +9,18 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-		Stage|Any CPU = Stage|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9FD7216E-E664-4B39-9E8F-C4C407BB3610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9FD7216E-E664-4B39-9E8F-C4C407BB3610}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FD7216E-E664-4B39-9E8F-C4C407BB3610}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FD7216E-E664-4B39-9E8F-C4C407BB3610}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9FD7216E-E664-4B39-9E8F-C4C407BB3610}.Stage|Any CPU.ActiveCfg = Stage|Any CPU
-		{9FD7216E-E664-4B39-9E8F-C4C407BB3610}.Stage|Any CPU.Build.0 = Stage|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
 		SolutionGuid = {04DFA2B1-E9DA-49DE-B083-6D77C6565078}
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
 	EndGlobalSection
 EndGlobal

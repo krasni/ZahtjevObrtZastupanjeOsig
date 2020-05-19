@@ -1,5 +1,4 @@
-﻿using ZahtjevObrtZastupanjeOsig.Clients;
-using ZahtjevObrtZastupanjeOsig.Models;
+﻿using ZahtjevObrtZastupanjeOsig.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
