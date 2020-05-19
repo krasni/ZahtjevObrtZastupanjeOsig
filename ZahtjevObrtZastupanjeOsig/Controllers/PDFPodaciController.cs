@@ -155,9 +155,9 @@ namespace ZahtjevObrtZastupanjeOsig.Controllers
                 }
                 else
                 {
-                    var downloadCookie = new System.Web.HttpCookie("fileDownloadToken", podaciPDF.DownloadToken)
+                    var downloadCookie = new System.Web.HttpCookie("zahtjevObrtZastupanjeOsigDownloadPDF", podaciPDF.DownloadToken)
                     {
-                        Path = "/ZahtjevObrtZastupanjeOsig"
+                        //Path = "/ZahtjevObrtZastupanjeOsig"
                     };
 
                     Response.AppendCookie(downloadCookie);

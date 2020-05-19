@@ -1,6 +1,9 @@
 ﻿
 $().ready(function () {
 
+    var token = new Date().getTime(); //use the current timestamp as the token value
+    $('#download_token_value').val(token);
+
     jQuery.validator.addMethod("isDate", function (value, element) {
         var dateRegex = /^(?=\d)(?:(?:31(?!.(?:0?[2469]|11))|(?:30|29)(?!.0?2)|29(?=.0?2.(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00)))(?:\x20|$))|(?:2[0-8]|1\d|0?[1-9]))([-.\/])(?:1[012]|0?[1-9])\1(?:1[6-9]|[2-9]\d)?\d\d(?:(?=\x20\d)\x20|$))?(((0?[1-9]|1[012])(:[0-5]\d){0,2}(\x20[AP]M))|([01]\d|2[0-3])(:[0-5]\d){1,2})?$/;
         return this.optional(element) || dateRegex.test($("#DokumentPodaci_DatumIzrade").val());
@@ -188,20 +191,19 @@ $().ready(function () {
 
 var fileDownloadCheckTimer;
 function blockUIForDownload() {
-    var token = new Date().getTime(); //use the current timestamp as the token value
-    $('#download_token_value').val(token);
     $.blockUI({ message: 'Molim pričekajte...' });
+
     fileDownloadCheckTimer = window.setInterval(function () {
-        var cookieValue = $.cookie('fileDownloadToken');
-        if (cookieValue == token)
+        if ($.cookie('zahtjevObrtZastupanjeOsigDownloadPDF')) {
             finishDownload();
+        }
     }, 1000);
 } 
 
 function finishDownload() {
     window.clearInterval(fileDownloadCheckTimer);
 
-    document.cookie = 'fileDownloadToken' + '=; path=/ZahtjevObrtZastupanjeOsig; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = 'zahtjevObrtZastupanjeOsigDownloadPDF' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 
     // clear errors
     var container = $('#form1').find('[data-valmsg-summary="true"]');
