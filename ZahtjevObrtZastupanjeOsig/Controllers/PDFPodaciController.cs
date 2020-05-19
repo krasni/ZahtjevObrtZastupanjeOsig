@@ -31,7 +31,9 @@ namespace ZahtjevObrtZastupanjeOsig.Controllers
         [HttpGet]
         [ImportModelState]
         public ActionResult KreirajPDF()
-        {   
+        {
+            log.Info($"Browser: {Request.Browser.Browser}, Version: {Request.Browser.Version}, UserAgent: {Request.UserAgent}");
+
             var PodaciPDF = new PodaciPDF();
             return View(PodaciPDF);
         }
