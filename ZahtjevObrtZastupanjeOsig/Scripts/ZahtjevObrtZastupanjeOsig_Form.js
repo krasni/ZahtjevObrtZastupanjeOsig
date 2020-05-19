@@ -200,7 +200,7 @@ function blockUIForDownload() {
 
 function finishDownload() {
     window.clearInterval(fileDownloadCheckTimer);
-    $.cookie('fileDownloadToken', null); //clears this cookie value
+
     document.cookie = 'fileDownloadToken' + '=; path=/ZahtjevObrtZastupanjeOsig; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 
     // clear errors
