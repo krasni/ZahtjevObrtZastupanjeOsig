@@ -196,7 +196,7 @@ function blockUIForDownload() {
         if (cookieValue == token)
             finishDownload();
     }, 1000);
-}
+} 
 
 function finishDownload() {
     window.clearInterval(fileDownloadCheckTimer);
