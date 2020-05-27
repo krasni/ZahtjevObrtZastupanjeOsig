@@ -200,10 +200,18 @@ function blockUIForDownload() {
     }, 1000);
 } 
 
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 function finishDownload() {
     window.clearInterval(fileDownloadCheckTimer);
 
-    document.cookie = 'zahtjevObrtZastupanjeOsigDownloadPDF' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    //document.cookie = 'zahtjevObrtZastupanjeOsigDownloadPDF' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    setCookie('zahtjevObrtZastupanjeOsigDownloadPDF', 'null', -1);
 
     // clear errors
     var container = $('#form1').find('[data-valmsg-summary="true"]');
