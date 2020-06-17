@@ -11,6 +11,7 @@ $().ready(function () {
 
     $('#form1').submit(function (evt) {
         if ($('#form1').valid()) {
+            alert('Generirani dokument je potrebno vlastoručno potpisati kako bi zahtjev bio važeći.');
             blockUIForDownload();
         }
         else {
